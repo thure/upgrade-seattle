@@ -36,3 +36,4 @@ nbproject
 .idea
 node_modules
 dist
+prod

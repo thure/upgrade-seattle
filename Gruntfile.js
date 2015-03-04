@@ -64,12 +64,19 @@ module.exports = function(grunt) {
           './src/styles/**/*'
         ],
         dest: './dist/'
+      },
+      deploy: {
+        expand: true,
+        flatten: true,
+        src: './dist/*',
+        dest: './prod'
       }
     }
   });
 
   grunt.registerTask('default', ['dist']);
   grunt.registerTask('dist', ['dist:copy']);
+  grunt.registerTask('deploy', ['copy:deploy']);
   grunt.registerTask('dist:copy', ['copy:templates', 'copy:templates_wide', 'copy:assets', 'copy:fonts', 'copy:styles']);
 
 };
