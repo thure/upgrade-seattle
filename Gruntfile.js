@@ -35,7 +35,11 @@ module.exports = function(grunt) {
         src: ['pages_show_*', 'user_sessions_*'],
         dest: './dist/',
         rename: function(dest, src){
+          if(src.indexOf('_wide') < 0){
           return dest + src.replace('.html', '_wide.html');
+          }else{
+            return dest + src;
+        }
         }
       },
       assets: {
@@ -76,7 +80,13 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['dist']);
   grunt.registerTask('dist', ['dist:copy']);
-  grunt.registerTask('deploy', ['dist', 'copy:deploy']);
-  grunt.registerTask('dist:copy', ['copy:templates', 'copy:templates_wide', 'copy:assets', 'copy:fonts', 'copy:styles']);
+  grunt.registerTask('deploy', ['dist', 'diffCopy:deploy']);
+  grunt.registerTask('dist:copy', [
+    'newer:copy:templates',
+    'newer:copy:templates_wide',
+    'newer:copy:assets',
+    'newer:copy:fonts',
+    'newer:copy:styles'
+  ]);
 
 };
