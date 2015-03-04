@@ -37,12 +37,21 @@ module.exports = function(grunt) {
         rename: function(dest, src){
           return dest + src.replace('.html', '_wide.html');
         }
+      },
+      assets: {
+        expand: true,
+        flatten: true,
+        src: [
+          './src/assets/*',
+          './src/assets/**/*'
+        ],
+        dest: './dist/'
       }
     }
   });
 
   grunt.registerTask('default', ['dist']);
   grunt.registerTask('dist', ['dist:copy']);
-  grunt.registerTask('dist:copy', ['copy:templates', 'copy:templates_wide']);
+  grunt.registerTask('dist:copy', ['copy:templates', 'copy:templates_wide', 'copy:assets']);
 
 };
