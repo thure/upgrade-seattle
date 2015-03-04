@@ -76,7 +76,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['dist']);
   grunt.registerTask('dist', ['dist:copy']);
-  grunt.registerTask('deploy', ['copy:deploy']);
+  grunt.registerTask('deploy', ['dist', 'copy:deploy']);
   grunt.registerTask('dist:copy', ['copy:templates', 'copy:templates_wide', 'copy:assets', 'copy:fonts', 'copy:styles']);
 
 };
