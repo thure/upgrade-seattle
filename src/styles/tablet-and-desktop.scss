@@ -1,0 +1,1229 @@
+/* ===================================================================================
+   This is the tablet and desktop stylesheet. It applies to viewports above 768px.
+   For the mobile first stylesheet which applies to all screen widths, see theme.scss.
+   =================================================================================== */
+
+//* style variables *//
+
+// headline font
+$headline-font: "Crimson Text", Times, "Times New Roman", serif;
+
+// main font
+$font: "Crimson Text", Times, "Times New Roman", serif;
+
+// control font
+$control-font: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+
+// buttons font
+$button-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// forms font
+$form-font: "Ovo", Times, "Times New Roman", serif;
+
+$theme-color-1: #f04f23;
+$theme-color-2: #2f2f2f;
+$theme-color-3: #0b0b0b;
+$theme-color-4: #898a8a;
+
+// form input area focus color
+$theme-color-5: rgba(210, 78, 31, 0.6);
+
+$theme-color-6: #fff;
+
+// supporter nav colors
+$theme-color-7: #5b5b5b;
+
+// button colors
+$theme-color-8: #f04f23;
+$theme-color-9: #c6c6c6;
+$theme-color-10: #c6c6c6;
+
+// main body color
+$theme-color-11: #fff;
+
+// shades
+$theme-color-12: #f2f2f2;
+$theme-color-13: #e6e6e6;
+$theme-color-14: #2f2f2f;
+
+// alternative shades
+$theme-color-15: #fff;
+$theme-color-16: #e9e9e9;
+$theme-color-17: #b7b7b7;
+$theme-color-18: #5b5b5b;
+$theme-color-19: #fff;
+
+// alternative accent
+$theme-color-20: #fff;
+
+// general success and error colors
+$red: #a22;
+$green: #619114;
+
+// headers and footers
+$header-texture: url("header-background.jpg");
+$footer-texture: url("header-background.jpg");
+$header-color: #0b0b0b;
+$footer-color: $header-color;
+$event-icon: "event-icon.png";
+$event-icon-retina: "event-icon_2x.png";
+$homepage-intro-font-weight: 400;
+$homepage-intro-link-color: #adadad;
+$homepage-nav-link-color: $homepage-intro-link-color;
+$homepage-intro-accent-color: #3a3a3a;
+$footer-link-color: $theme-color-1;
+$footer-text-color: $theme-color-4;
+
+// supporter nav button variables
+$supporter-button-radius: 0;
+$supporter-button-background: transparent;
+$supporter-button-text: $theme-color-4;
+$supporter-button-border: 6px solid $theme-color-4;
+$supporter-button-background-hover: transparent;
+$supporter-button-text-hover: $theme-color-7;
+$supporter-button-border-hover: 6px solid $theme-color-7;
+$supporter-button-background-active: transparent;
+$supporter-button-text-active: $theme-color-1;
+$supporter-button-border-active: 6px solid $theme-color-1;
+$signin-social-text-facebook: #6d7ba3;
+$signin-social-background-facebook: transparent;
+$signin-social-text-twitter: #84acce;
+$signin-social-background-twitter: transparent;
+
+// header rule
+$header-rule: transparent repeat $header-texture;
+
+// mobile menu
+$mobile-menu-background: $theme-color-1;
+$mobile-menu-color: $theme-color-6;
+
+// border-radius mixin
+@import "border_radius";
+
+// fluid grid for tablet
+@import "grid-tablet";
+
+//compass css3 mixins
+@import "compass/css3";
+
+//mobile nav
+@import "mobile-nav";
+
+// headlines
+
+h1 {
+  font-size: 38.5px;
+  line-height: 42px;
+}
+
+h2 {
+  font-size: 50px;
+  line-height: 52px;
+}
+
+h3 {
+  font-size: 35px;
+  line-height: 1.25em;
+  font-weight: 600;
+  a {
+    color: $theme-color-2;
+    &:hover {
+      color: $theme-color-1;
+    }
+  }
+}
+
+h4 {
+  font-size: 30px;
+  line-height: 35px;
+  margin-bottom: .5em;
+  font-weight: 400;
+}
+
+// buttons
+.submit-button, .success-button, .submit-link, .destroy-link, .create-link {
+  padding: 10px 18px;
+  font-size: 12px;
+  margin: .25em .25em 0 0;
+  width: auto;
+}
+
+// progress bar
+.bar-goal {
+  letter-spacing: 0;
+}
+.content-pages-show-petition-wide, .page-pages-show-basic-wide {
+  .bar-goal {
+    font-size: 27px;
+  }
+  .bar-text {
+    font-size: 27px;
+  }
+}
+
+.width-container {
+  width: 90%;
+  margin: 0 5%;
+  padding: 0 3%;
+}
+
+// page layout if the sidebar is turned on
+
+.twocolumn-container {
+  padding-top: 32px;
+  .left-column, .right-column-wide {
+    background-color: $theme-color-11;
+    padding: 0 2.631578947% 32px 0;
+    margin-bottom: 15px;
+    float: left;
+    width: 65.789473684%;
+    // 16px Ã· 1026px
+    margin-bottom: 0;
+    border-right: 1px solid $theme-color-13;
+  }
+  .right-column-wide {
+    padding: 0 0 64px 2.631578947%;
+    border-right: none;
+    border-left: 1px solid $theme-color-13;
+  }
+  .right-column, .left-column-narrow {
+    padding: 0;
+    float: left;
+    width: 34.210526316%;
+    // 310px Ã· 1026px
+    margin-bottom: 0;
+    margin-top: -32px;
+    input.text, .submit-button {
+      height: 54px;
+    }
+  }
+  .right-column {
+    position: relative;
+    border-left: 1px solid $theme-color-13;
+    margin-left: -1px
+  }
+  .left-column-narrow {
+    position: relative;
+    border-right: 1px solid $theme-color-13;
+    margin-right: -1px
+  }
+  .right-column > ul, .right-column > div, .left-column-narrow > ul, .left-column-narrow > div {
+    padding: 9.5% 0 9.5% 9.5%;
+    border-bottom: 1px solid $theme-color-13;
+    &.rule-top {
+      border-bottom: none;
+    }
+  }
+  .left-column-narrow > ul, .left-column-narrow > div {
+    padding: 9.5% 9.5% 9.5% 0;
+  }
+  .right-column > ul:first-child, .right-column > div:first-child, .left-column-narrow > ul:first-child, .left-column-narrow > div:first-child {
+    border-top: none;
+  }
+  form input:nth-last-of-type(2) {
+    margin-bottom: 0;
+  }
+  .blog hr {
+    margin: 80px -4% 60px 0;
+  }
+  hr {
+    margin: 60px -4% 60px 0;
+    width: 104.2%;
+    &.marginless {
+      margin-top: 50px;
+      margin-bottom: 45px;
+    }
+  }
+  .right-column-wide hr {
+    margin: 80px 0 60px -4%;
+  }
+  .activities {
+    li:after {
+      margin: 0 -4% 5px 0;
+      width: 104.2%;
+    }
+    li:last-child:after {
+      border-top: none;
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .event-wrap {
+    li:after {
+      margin: 30px -4% 30px 0;
+      width: 104.2%;
+    }
+    li:last-child:after {
+      border-top: none;
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  } 
+}
+
+.right-column a.supporter-nav-button.button:first-of-type {
+  margin-top: 9.5%;
+}
+
+.right-column a.supporter-nav-button.button:last-of-type {
+  margin-bottom: 9.5%;
+}
+
+.homepage .intro h1 {
+  font-size: 32px;
+  line-height: 45px;
+}
+
+// wraps your site name or site logo
+
+.header-container .title {
+  font-size: 63px;
+  line-height: 100%;
+  padding: 8% 0;
+  font-weight: normal;
+}
+
+.has-features .header-wrap  .title {
+  padding: 5% 0 0 0;
+}
+
+.has-features .site-logo header {
+  padding: 0;
+  height: 90%;
+  top: 10%;
+}
+
+.site-logo {
+  header {
+    padding: 5% 0;
+    img {
+      max-height: 250px;
+    }
+  }
+}
+
+// site wide footer
+
+footer {
+  .footer-right {
+    margin-top: 0;
+    text-align: right;
+  }
+  .row-fluid [class*="span"] {
+    min-height: 0;
+  }
+}
+
+a.supporter-nav-button.button {
+  margin-left: 9.5%;
+}
+
+// hides off canvas nav
+
+.wrap.active {
+  left: 0;
+}
+
+.mobile-visible {
+  display: none;
+}
+
+.desktop-visible {
+  display: block;
+}
+
+.flash-share {
+  .float {
+    float: right;
+  }
+}
+
+// icon which activates off canvas nav
+
+.menu-link {
+  display: none;
+}
+
+// top nav with drop downs
+
+.nav-wrap {
+  border-bottom: 1px solid $theme-color-13;
+  background: $theme-color-19;
+  overflow: visible;
+}
+
+.has-background-image .nav-wrap {
+  border: none;
+}
+
+.has-background-image nav.width-container {
+  border-bottom: 1px solid $theme-color-13;
+}
+
+nav.width-container, .subnav {
+  display: block;
+  background: $theme-color-19;
+  position: relative;
+  text-align: center;
+  min-height: 0;
+  font-family: $control-font;
+  color: $theme-color-13;
+  text-transform: uppercase;
+  font-size: 15px;
+  left: 0;
+  width: 90%;
+  margin: 0 5%;
+  padding: 22px 3%;
+  li {
+    list-style: none;
+    border: none;
+    &:hover {
+      background: transparent;
+    }
+  }
+  a {
+    color: $homepage-intro-link-color;;
+    padding: 0;
+    line-height: 38px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  & ul li {
+    display: inline-block;
+    padding-right: 40px;
+    position: relative;
+    border: none;
+    &:hover {
+      background: transparent;
+    }
+  }
+  & > ul li:last-child {
+    padding-right: 0;
+  }
+  & > ul li.active {
+    background: transparent;
+    a {
+      color: $homepage-intro-accent-color;
+    }
+  }
+  & > ul li:hover a {
+    color: $homepage-nav-link-color;
+  }
+  .drop {
+    position:relative;
+  }
+  /* controls bg color of top when hovering on sub */
+  .sub {
+    position: absolute;
+    top: 40px;
+    left: -25%;
+    z-index: 99999;
+    background-color: $theme-color-15;
+    color: $theme-color-18;
+    padding: 0;
+    text-align: center;
+    display: none;
+    font-family: $control-font;
+    font-size: 13px;
+    border-top: 3px solid $theme-color-18;
+    border-left: 3px solid $theme-color-18;
+    border-right: 3px solid $theme-color-18;
+    & > li {
+      width: 100%;
+      border-bottom: 3px solid $theme-color-18;
+      line-height: 31px;
+      padding: 0;
+      display: block;
+      &.mobile-visible {
+        display:none;
+      }
+    }
+    a {
+      background: $theme-color-15;
+      font-family: $control-font;
+      font-size: 13px;
+      line-height: 18px;
+      padding: 7px 1.5em 6px 1.5em;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      color: $theme-color-18;
+      width: 193px;
+      &:hover {
+        background: $theme-color-16;
+      }
+      &:active {
+        background: $theme-color-17;
+      }
+    }
+    &:before {
+      display: block;
+      position: absolute;
+      top: -20px;
+      width: 100%;
+      height: 20px;
+      line-height: 30px;
+      content: "\25B2";
+      text-align: center;
+      color: $theme-color-18;
+      @include transform(scaleX(1.75));
+    }
+  }
+}
+
+// navigation shown if a page has more than one subpage
+
+.subnav {
+  margin: 0 0 40px 0;
+  height: auto;
+  padding: 0;
+  float: left;
+  clear: both;
+  list-style-type: none;
+  text-align: left;
+  background: $theme-color-11;
+  & > li {
+    display: inline-block;
+    margin: 0 7px 10px 0;
+  }
+  .active a {
+    border: $supporter-button-border-active;
+    background: $supporter-button-background-active;
+    color: $supporter-button-text-active;
+    @include border-radius($supporter-button-radius);
+    border-width: 3px;
+  }
+  .join {
+    position: relative;
+  }
+  .sub {
+    left: 0;
+    top: 47px;
+    &:before {
+      top: -20px;
+      height: 20px;
+      line-height: 30px;
+      content: "\25B2";
+      text-align: center;
+      color: $theme-color-18;
+      @include transform(scaleX(1.75));
+    }
+  }
+  & > li > a {
+    background: $supporter-button-background;
+    @include border-radius($supporter-button-radius);
+    color: $supporter-button-text;
+    border: $supporter-button-border;
+    border-width: 3px;
+    font-family: $control-font;
+    font-size: 13px;
+    line-height: 30px;
+    padding: 1px 1.5em 0 1.5em;
+    display: block;
+    width: 100%;
+    text-align: center;
+    &:hover {
+      border: $supporter-button-border-hover;
+      background: $supporter-button-background-hover;
+      color: $supporter-button-text-hover;
+      border-width: 3px;
+    }
+    &:active {
+      border: $supporter-button-border-active;
+      background: $supporter-button-background-active;
+      color: $supporter-button-text-active;
+      border-width: 3px;
+    }
+  }
+}
+
+nav.width-container li:hover .sub {
+  display: inline-block;
+}
+
+// follow page link shown in page stream
+
+.page-follow {
+  float: right;
+  margin-top: -35px;
+}
+
+// email signup form
+
+.email-signup {
+  input.text {
+    height: 73px;
+    font-size: 35px;
+    line-height: 35px;
+    border: 0;
+  }
+  .submit-button {
+    font-size: 22px;
+    line-height: 22px;
+    height: 73px;
+    vertical-align: bottom;
+    top: 0;
+  }
+}
+
+// inline radio buttons and check boxes
+
+.radio-inline, .checkbox-inline {
+  span {
+    white-space: nowrap;
+    display: inline-block;
+  }
+  input[type="radio"], input[type="checkbox"] {
+    margin: 0 .15em 0 0;
+    display: inline-block;
+  }
+  input[type="radio"]:checked+label, input[type="checkbox"]:checked+label {
+    background-color: transparent;
+    color: $theme-color-18;
+  }
+  label {
+    display: block;
+  }
+  label.radio, label.checkbox {
+    .option_label {
+      display: inline;
+    }
+    background-color: transparent;
+    padding: 0;
+    margin: 0 .7em .625em 0;
+    font-weight: 400;
+  }
+  label.checkbox {
+    position: relative;
+    padding: 0;
+    height: auto;
+    font-size: inherit;
+    margin: 0;
+  }
+ &.checkbox-inline {
+    vertical-align: top;
+    li {
+      label {
+        width: auto;
+      }
+      input[type="checkbox"] {
+        vertical-align: 5%;
+      }
+    }
+  }
+}
+
+// inline radio buttons
+
+.radio.inline, .checkbox.inline, .inline label.radio {
+  display: inline-block;
+  margin-right: 20px;
+  padding-top: 5px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  border: 0;
+  padding: 0;
+  background: none;
+  @include box-shadow(0);
+}
+
+// wraps credit card icons
+
+.cc {
+  padding-bottom: 10px;
+}
+
+// paid membership options
+
+ul.membership-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  li.membership {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 1.22% 1.22% 0;
+    width: 31.8%;
+    height: 250px;
+    .buy {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      left: 0;
+      .submit-button {
+        margin:0;
+      }
+    }
+  }
+}
+
+// featured content slider
+
+.page-features {
+  a.features-headline {
+    position: absolute;
+    left: 16%;
+    top: 40%;
+    z-index: 2;
+    background: $theme-color-3;
+    width: 68%;
+    font-size: 22px;
+    line-height: 35px;
+    text-align:center;
+    padding: 20px 40px;
+    color: $theme-color-6;
+    /* Fallback for web browsers that doesn't support RGBa */
+    background: rgb(0, 0, 0) transparent;
+    /* RGBa with 0.6 opacity */
+    background: rgba(0, 0, 0, 0.4);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+  }
+  .header-wrap {
+    height:35%;
+    margin: 0 auto;
+  }
+  .feature-slides img.slider-loading {
+    max-width: 6%;
+    top: 47%;
+    left: 47%;
+  }
+}
+
+.feature-slides .submit-link.desktop-visible {
+  display: none;
+}
+
+.flex-prev, .flex-next {
+  display: block;
+  height: 152px;
+  width: 59px;
+  background-size: 59px 152px;
+  text-indent: -9999px;
+}
+
+.flex-prev {
+  background-image: url('slider-left-arrow.png');
+}
+
+.flex-next {
+  background-image: url('slider-right-arrow.png');
+}
+
+// inline sign in form
+
+.user-session-form-container {
+  .oauth-links {
+   margin-bottom: 0;
+   a {
+    width: 100%;
+   }
+  }
+  .sign-in-with-email, .sign-up {
+    border-left: 1px solid $theme-color-13;
+    padding-left: 36px;
+  }
+}
+
+.twocolumn-container .right-column .sign-in-buttons {
+  padding-left: 9.5%;
+}
+
+.review-rules {
+  float: right;
+  font-size: 15px;
+  font-family: $control-font;
+  padding: 0;
+}
+
+// page specific styles
+
+.page-user-sessions-new-wide, .page-users-accounts-new-wide, .page-users-password-resets-new-wide, .page-users-passwords-new-wide {
+  .onecolumn-container {
+    margin: 0 auto 50px auto;
+    width: 75%;
+  }
+  footer {
+    margin: 0 auto;
+  }
+}
+
+.signin-with-facebook {
+  margin-right: 5px;
+}
+
+#event_rsvp_guests_count, input.quantity, #signup_donations_to_raise_amount {
+  width: 25%;
+}
+
+.page-type-event {
+  #headline {
+    padding-left: 60px;
+    background: transparent url($event-icon) left center no-repeat;
+  }
+  .intro {
+    padding-left: 60px;
+  }
+  .event-map-wrap {
+    margin: 1em 0;
+  }
+}
+
+.event-wrap {
+  .disabled {
+    &.padbottom {
+      background: transparent url('event-icon-disabled.png') left 20px no-repeat;
+    }
+  }
+  li > div {
+    padding-left: 60px;
+    background: transparent url($event-icon) left 20px no-repeat;
+  }
+}
+
+.event-detail, .event_detail {
+  margin-right: 60px;
+}
+
+.event-detail, .event_detail {
+  margin: 1.5em 0 1.5em 60px;
+}
+
+input#donation_amount_other {
+  width: 30%;
+}
+
+.distance {
+  .within {
+    position: relative;
+    top: 2px;
+    display: inline;
+    padding-right: .6em;
+  }
+}
+
+.page-user-sessions-new-wide {
+  h2 {
+    font-size: 31.5px;
+    line-height: 35px;
+  }
+}
+
+.chiclet {
+  font-size: 35px;
+  margin-right: 20px;
+  width: 57px;
+  height: 57px;
+  line-height: 50px;
+  top: .25em;
+}
+
+.answer-wrap {
+  .answer {
+    margin-left: 77px;
+  }
+}
+
+.faq {
+  h3 {
+    top: .3em;
+    margin-left: 77px;
+  }
+  .excerpt > p {
+    margin-left: 77px;
+  }
+}
+
+.content-pages-show-question {
+  h2 {
+    margin-left: 77px;
+  }
+  .intro {
+    margin-left: 77px;
+  }
+}
+
+.people-list .people-list-follow {
+  top: 10px;
+  bottom: auto;
+}
+
+.content-pages-show-political-capital {
+  font-size: 20px;
+  line-height: 1.25em;
+}
+
+.page-pages-show-voter-registration .iframe-wrapper {
+  width:100%;
+  left: 0;
+}
+
+.content-pages-show-donation-wide { 
+  .headline {
+    margin-top: 0;
+  }
+  .radio-inline label.radio {
+    min-width: 0;
+  }
+  .radio-inline, .checkbox-inline {
+    input[type="radio"] {
+      margin: 0;
+      position:absolute;
+      left: -9999px;
+    }
+    input[type="radio"]:checked+label {
+      border: $supporter-button-border-active;
+      background: $supporter-button-background-active;
+      color: $supporter-button-text-active;
+    }
+    label.radio, label.checkbox {
+      .option_label {
+        display: inline;
+      }
+      background: $supporter-button-background;
+      @include border-radius($supporter-button-radius);
+      color: $supporter-button-text;
+      border: $supporter-button-border;
+      font-weight: 400;
+      letter-spacing: 1px;
+      padding: 16px 15px 13px 15px;
+      line-height: 1.2em;
+      display: inline-block;
+      font-size: 18px;
+      font-family: "proxima-nova",Helvetica,Arial,sans-serif;
+      text-transform: uppercase;
+      margin: 0 10px 10px 0;
+      &.on {
+        border: $supporter-button-border-active;
+        background: $supporter-button-background-active;
+        color: $supporter-button-text-active;
+      }
+      &:hover {
+        border: $supporter-button-border-hover;
+        background: $supporter-button-background-hover;
+        color: $supporter-button-text-hover;
+      }
+      &:active {
+        border: $supporter-button-border-active;
+        background: $supporter-button-background-active;
+        color: $supporter-button-text-active;
+      }
+    }
+  }
+  .tax-info {
+    float: right;
+  }
+}
+
+// inline formatting for name, activity type and date in page stream for tablet and desktop view
+
+ul#page-stream {
+  li.activity  {
+    span + a {
+    display: inline;
+    } 
+  }
+  .activity-time {
+    display: inline;
+  }
+  .timeago {
+    display: inline;
+    padding-right: 0;
+    float: none;
+    color: inherit;
+  }
+  .activity_links a {
+    display: inline;
+  }
+  .activity_content {
+    clear: none;
+  }
+}
+
+// Desktop below 1100px styles
+@media only screen and (max-width: 1100px) {
+  .user-session-form-container .oauth-links {
+    a {
+      letter-spacing: -0.5px;
+      padding: 15px 5px 14px 10px;
+      i {
+        display: none;
+      }
+    }
+  }
+  .stream-card-profile span {
+    font-size: 15px;
+  }
+}
+
+// Adding slider button above 1140 screen width
+@media only screen and (min-width: 1140px) {
+  // add submit link to slider
+  .feature-slides .submit-link.desktop-visible {
+    display: block;
+    min-width: 235px;
+    top: 73%;
+    position: absolute;
+    font-size: 14px;
+    padding: 15px 22px;
+    left: 50%;
+    margin-left: -116px;
+    z-index: 20;
+  }
+}
+
+// Desktop above 1140px styles
+
+@media only screen and (min-width: 1254px) { // 1140px + 10% margins
+
+  // maximum side width container
+
+  .width-container {
+    width: 1140px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  nav.width-container {
+    width: 1140px;
+    margin: 0 auto;
+    padding: 25px 30px;
+  }
+
+  .homepage .intro {
+    margin-left: -30px;
+    margin-right: -30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    h1 {
+      font-size: 50px;
+      line-height: 65px;
+      font-weight: $homepage-intro-font-weight;
+    }
+  }
+
+  // paid membership options
+
+  ul.membership-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li.membership {
+      position: relative;
+      float: left;
+      text-align: center;
+      list-style: none;
+      background-color: #f3f3f3;
+      @include border-radius(2px);
+      padding: 15px;
+      display: inline-block;
+      margin: 0 10px 15px 0;
+      width: 23.983739837398%; // 236px Ã· 984px
+      height: 250px;
+      .membership-bottom {
+        background-color: #444;
+        color: #ccc;
+      }
+      .membership-blurb {
+        padding: 15px 0;
+        font-size: 15px;
+        line-height: 1.25em;
+      }
+      .badge {
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+}
+
+// iPads and Android tablets portrait mode
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px), only screen
+and (min-device-width : 800px) and (max-device-width : 1280px) and (orientation : portrait) {
+
+  // off canvas nav to be used on tablets, since drop downs don't work on touch devices
+  nav.width-container {
+    @include mobile-nav;
+    &> ul li {
+      width: 100%;
+      a {
+        text-align: left;
+      }
+      &:hover {
+        background: transparent;
+        a {
+          color: $theme-color-4;
+        }
+      }
+      &.active {
+        background: #313131;
+        a {
+          color: $theme-color-4;
+        }
+      }
+    }
+    .sub {
+      position: static;
+      background-color: transparent;
+      padding: 0 0 0 20px;
+      text-align: center;
+      display: none;
+      font-family: $control-font;
+      font-size: 15px;
+      border: 0;
+      & > li {
+        border-bottom: 0;
+        line-height: normal;
+        padding: 0;
+      }
+      a {
+        background: transparent;
+        font-family: $control-font;
+        font-size: 15px;
+        line-height: 30px;
+        text-align: left;
+        color: $theme-color-4;
+      }
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .has-header-image, .has-features {
+    .width-container {
+      padding: 0 2.5%;
+    }
+    nav.width-container {
+      padding: 0;
+    }
+    footer.width-container {
+      padding-top: 43px;
+      padding-bottom: 5%;
+    }
+    .title {
+      padding: 5% 0 0 0;
+    }
+  }
+
+  .menu-link {
+    display: block;
+    margin: 15px 0 0 15px;
+  }
+
+  .wrap.active {
+    left: 12em;
+  }
+
+  // javascript is used to wrap all iframes in a span called responsive-embed-wrapper to make them responsive.
+  // once the iframe is wrapped in said span, it will be shown.
+
+  iframe[src *= 'youtube'] {
+    display: none;
+  }
+
+  .responsive-embed-wrapper iframe {
+    display: block;
+  }
+
+  .fb-like-box iframe {
+    display: block;
+  }
+
+  header {
+    padding: 28px 0 0 0;
+    max-width: 78%;
+  }
+
+  // replaces the subnav with breadcrumbs, as dropdowns don't work in touch devices
+
+  .tablet-visible {
+    display: block;
+  }
+
+  .desktop-visible {
+    .subnav-container {
+      display: none;
+    }
+  }
+
+  .stream-card-profile span {
+    font-size: .85em;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  h3, #stream h3 {
+    font-size: 24px;
+    line-height: 1.25em;
+    font-weight: 600;
+    a {
+      color: $theme-color-2;
+      &:hover {
+        color: $theme-color-1;
+      }
+    }
+  }
+
+  h4 {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: .5em;
+    font-weight: 400;
+  }
+}
+
+// Retina assets
+
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) {
+  .page-type-event {
+    #headline {
+      background-image: url($event-icon-retina);
+      background-size: 28px 45px;
+    }
+  }
+  .event-wrap {
+    .disabled {
+      &.padbottom {
+        background: transparent url('event-icon-disabled_2x.png') left 20px no-repeat;
+        background-size: 28px 45px;
+      }
+    }
+    li > div {
+      background-image: url($event-icon-retina);
+      background-size: 28px 45px;
+    }
+  }
+  .flex-prev {
+    background-image: url('slider-left-arrow_2x.png');
+  }
+
+  .flex-next {
+    background-image: url('slider-right-arrow_2x.png');
+  }
+}

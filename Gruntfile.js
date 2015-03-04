@@ -46,12 +46,30 @@ module.exports = function(grunt) {
           './src/assets/**/*'
         ],
         dest: './dist/'
+      },
+      fonts: {
+        expand: true,
+        flatten: true,
+        src: [
+          './src/fonts/*',
+          './src/fonts/**/*'
+        ],
+        dest: './dist/'
+      },
+      styles: {
+        expand: true,
+        flatten: true,
+        src: [
+          './src/styles/*',
+          './src/styles/**/*'
+        ],
+        dest: './dist/'
       }
     }
   });
 
   grunt.registerTask('default', ['dist']);
   grunt.registerTask('dist', ['dist:copy']);
-  grunt.registerTask('dist:copy', ['copy:templates', 'copy:templates_wide', 'copy:assets']);
+  grunt.registerTask('dist:copy', ['copy:templates', 'copy:templates_wide', 'copy:assets', 'copy:fonts', 'copy:styles']);
 
 };

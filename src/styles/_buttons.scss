@@ -1,0 +1,111 @@
+// buttons
+
+@mixin button(){
+  cursor: pointer;
+  display: inline-block;
+  background-color: $theme-color-8;
+  @include border-radius(2px);
+  padding: 10px 18px;
+  border: 0;
+  font: 12px $button-font;
+  font-weight: 700;
+  color: #fff;
+  min-height: 34px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: .25em .25em 0 0;
+  white-space: normal;
+  a {
+    color: #fff;
+  }
+  &:hover {
+    background: $theme-color-9;
+  }
+  &:active {
+    background: $theme-color-10;
+  }
+}
+
+@mixin mobile-button(){
+  padding: 15px 10px;
+  font-size: 20px;
+  width: 100%;
+  margin-top: .625em;
+}
+
+.button,
+.small_button {
+  @include button;
+}
+
+.tiny-button {
+  font-size: 10px;
+  padding: 2px 5px;
+  min-height: 100%;
+}
+
+.submit-button, .success-button {
+  @include button;
+  @include mobile-button;
+  background: $theme-color-1;
+}
+
+// green button, used in pledge pages
+  
+.create-link {
+  @include mobile-button;
+  background-color: $green;
+  &:hover {
+    background-color: lighten($green, 5);
+  }
+}
+
+// red button, commonly used to cancel actions
+
+.destroy-link {
+  @include mobile-button;
+  background-color: $red;
+  &:hover {
+    background-color: lighten($red, 5);
+  }
+}
+
+.submit-link {
+  @include button;
+  @include mobile-button;
+}
+
+.neutral-link {
+  background-color: $theme-color-1;
+  &:hover {
+    background-color: lighten($theme-color-1, 5);
+  }
+}
+
+// button to close share box
+
+.share-close {
+  float: right;
+  margin: -15px -15px 10px 10px; 
+  padding: 5px;
+  min-height: auto;
+  font-size: 11px;
+  @include border-radius(0px);
+}
+
+// read more link
+
+.read-more, .read_more {
+  display: block;
+  margin-bottom: 1em;
+  margin-top: -1em;
+  font-style: italic;
+}
+
+.share-container {
+  .small-button {
+    min-height: 24px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
