@@ -1,0 +1,93 @@
+$blue_1: #95CCD7;
+$blue_2: #00BDD3;
+$blue_3: #005B6A;
+$blue_4: #183156;
+
+$gray_1: #58585b;
+
+$green_1: #8BC768;
+$green_2: #599D43;
+
+$purple_1: #46226C;
+
+// global variables:
+
+$theme-color-1: $blue_2;
+$theme-color-2: #2f2f2f;
+$theme-color-3: #0b0b0b;
+$theme-color-4: #898a8a;
+
+// form input area focus color
+$theme-color-5: rgba(210, 78, 31, 0.6);
+
+$theme-color-6: #fff;
+
+// supporter nav colors
+$theme-color-7: #5b5b5b;
+
+// button colors
+$theme-color-8: $green_1;
+$theme-color-9: #c6c6c6;
+$theme-color-10: #c6c6c6;
+
+// main body color
+$theme-color-11: #fff;
+
+// shades
+$theme-color-12: #f2f2f2;
+$theme-color-13: #e6e6e6;
+$theme-color-14: #2f2f2f;
+
+// alternative shades
+$theme-color-15: #fff;
+$theme-color-16: #e9e9e9;
+$theme-color-17: #b7b7b7;
+$theme-color-18: #5b5b5b;
+$theme-color-19: #fff;
+
+// alternative accent
+$theme-color-20: #fff;
+
+// general success and error colors
+$red: #a22;
+$green: $green_2;
+
+// navs
+$background_nav-main: $gray_1;
+
+// headers and footers
+$header-texture: url("header-background.jpg");
+$footer-texture: url("header-background.jpg");
+$header-color: #0b0b0b;
+$footer-color: $header-color;
+$event-icon: "event-icon.png";
+$event-icon-retina: "event-icon_2x.png";
+$homepage-intro-font-weight: 400;
+$homepage-intro-link-color: #adadad;
+$homepage-nav-link-color: $homepage-intro-link-color;
+$homepage-intro-accent-color: #3a3a3a;
+$footer-link-color: $theme-color-1;
+$footer-text-color: $theme-color-4;
+
+// supporter nav button variables
+$supporter-button-radius: 0;
+$supporter-button-background: transparent;
+$supporter-button-text: $theme-color-4;
+$supporter-button-border: 6px solid $theme-color-4;
+$supporter-button-background-hover: transparent;
+$supporter-button-text-hover: $theme-color-7;
+$supporter-button-border-hover: 6px solid $theme-color-7;
+$supporter-button-background-active: transparent;
+$supporter-button-text-active: $theme-color-1;
+$supporter-button-border-active: 6px solid $theme-color-1;
+$signin-social-text-facebook: #6d7ba3;
+$signin-social-background-facebook: transparent;
+$signin-social-text-twitter: #84acce;
+$signin-social-background-twitter: transparent;
+
+// header rule
+$header-rule: transparent repeat $header-texture;
+
+// mobile menu
+$mobile-menu-background: $theme-color-1;
+$mobile-menu-color: $theme-color-6;
