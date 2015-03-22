@@ -284,44 +284,48 @@ nav.width-container, .subnav {
   left: 0;
   width: 90%;
   margin: 0 5%;
-  padding: 22px 3%;
+
   li {
+    cursor: pointer;
     list-style: none;
     border: none;
     &:hover {
       background: transparent;
     }
   }
+
   a {
-    color: $homepage-intro-link-color;;
-    padding: 0;
-    line-height: 38px;
+    display: block;
+    padding: 20px;
+    color: $homepage-intro-link-color;
   }
+
   ul {
     list-style-type: none;
     padding: 0;
+    font-size: 0;
   }
+
   & ul li {
     display: inline-block;
-    padding-right: 40px;
     position: relative;
     border: none;
-    &:hover {
-      background: transparent;
-    }
-  }
-  & > ul li:last-child {
-    padding-right: 0;
-  }
-  & > ul li.active {
     background: transparent;
+    transition: background-color 200ms linear;
+
     a {
-      color: $homepage-intro-accent-color;
+      font-size: 12pt;
+    }
+
+    &:hover {
+      background: $blue_3;
+    }
+
+    &.active, &.active:hover {
+      background: $blue_2;
     }
   }
-  & > ul li:hover a {
-    color: $homepage-nav-link-color;
-  }
+
   .drop {
     position:relative;
   }
@@ -910,7 +914,6 @@ ul#page-stream {
   nav.width-container {
     width: 1140px;
     margin: 0 auto;
-    padding: 25px 30px;
   }
 
   .homepage .intro {
