@@ -1,16 +1,16 @@
 // global variables
 
-// headline font
-$headline-font: "Crimson Text", Times, "Times New Roman", serif;
-
 // main font
-$font: "Crimson Text", Times, "Times New Roman", serif;
+$font: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+
+// headline font
+$headline-font: $font;
 
 // control font
-$control-font: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+$control-font: $font;
 
 // buttons font
-$button-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$button-font: $font;
 
 // forms font
-$form-font: "Ovo", Times, "Times New Roman", serif;
+$form-font: $font;

@@ -17,18 +17,19 @@
 
   <!-- JavaScript Google font import for https -->
   <script type="text/javascript">
-  WebFontConfig = {
-    google: { families: [ 'Ovo::latin', 'Crimson+Text:400,600,400italic,600italic:latin', 'Exo+2:100,400,700,400italic,700italic:latin',  'Source+Sans+Pro:200,400,700,400italic,700italic:latin', 'Tinos:400,700,400italic,700italic:latin' ] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })(); </script>
+      WebFontConfig = {
+          google: { families: [ 'Open+Sans:400italic,400,600,700:latin' ] }
+      };
+      (function() {
+          var wf = document.createElement('script');
+          wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+          wf.type = 'text/javascript';
+          wf.async = 'true';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+      })();
+  </script>
 
   <!-- because ie8 ignores media queries, we need this -->
   <!--[if IE 8]>
