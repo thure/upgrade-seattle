@@ -311,7 +311,7 @@ nav.width-container, .subnav {
     position: relative;
     border: none;
     background: transparent;
-    transition: background-color 200ms linear;
+    @include transition(background-color 0.1s linear);
 
     a {
       font-size: 12pt;

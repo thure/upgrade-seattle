@@ -481,14 +481,12 @@ header.splash {
 // icon which activates off canvas nav
 
 .menu-link {
-  float: left;
   display: block;
   padding: 4px 7px;
-  margin: 12px 0 0 12px;
   line-height: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 12px;
+  left: 12px;
   background-color: $mobile-menu-background;
   z-index: 99;
   @include border-radius(2px);
