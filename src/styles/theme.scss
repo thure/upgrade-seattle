@@ -1696,8 +1696,8 @@ ul.membership-list {
       padding: 0;
     }
     &:before {
-      content: "â¢";
-      font-size: .85em;
+      content: "•";
+      font-size: 1em;
       display: inline-block;
       margin-right: .25em;
       color: $theme-color-4;
